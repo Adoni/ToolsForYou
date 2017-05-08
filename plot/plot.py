@@ -160,9 +160,9 @@ if __name__ == '__main__':
         exit(0)
     function_name = sys.argv[1]
     data_file = sys.argv[2]
-    if function_name=='bar_plot':
+    if function_name=='bar':
         bar_plot(data_file)
-    elif function_name=='stack_bar_plot':
+    elif function_name=='stack_bar':
         stack_bar_plot(data_file)
-    elif function_name=='line_plot':
+    elif function_name=='line':
         line_plot(data_file)

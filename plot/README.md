@@ -1,0 +1,16 @@
+绘图工具
+====
+
+目前支持折线图、柱状图、堆积柱状图
+
+数据格式见[data](./data)文件夹
+
+用法：
+
+    python plot.py [function_name] [data_file_name]
+
+例子：
+
+* 折线图：`python plot.py line data/toy_data_for_line_plot.txt`
+* 柱状图：`python plot.py bar data/toy_data_for_line_plot.txt`
+* 堆积柱状图：`python plot.py stack_bar data/toy_data_for_line_plot.txt`
