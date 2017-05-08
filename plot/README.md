@@ -11,6 +11,6 @@
 
 例子：
 
-* 折线图：`python plot.py line data/toy_data_for_line_plot.txt`
-* 柱状图：`python plot.py bar data/toy_data_for_line_plot.txt`
-* 堆积柱状图：`python plot.py stack_bar data/toy_data_for_line_plot.txt`
+* 折线图：`python3 plot.py line data/toy_data_for_line_plot.txt`
+* 柱状图：`python3 plot.py bar data/toy_data_for_line_plot.txt`
+* 堆积柱状图：`python3 plot.py stack_bar data/toy_data_for_line_plot.txt`

@@ -1,10 +1,13 @@
+#coding:utf8
 from matplotlib import pyplot as plt
 import sys
 import numpy
 
+fontsize = 18
+width = 0.35  # the width of the bars: can also be len(x) sequence
+line_width=3.0
 
 def line_plot(data_file):
-    fontsize = 18
     with open(data_file) as f:
         xlabel = f.readline().strip()
         ylabel = f.readline().strip()
@@ -15,12 +18,11 @@ def line_plot(data_file):
         y2 = []
         for line in f:
             line = line.strip().split('\t')
-            print(line)
             x.append(float(line[0]))
             y1.append(float(line[1]))
             y2.append(float(line[2]))
-        plt.plot(x, y1, label=line1_name)
-        plt.plot(x, y2, label=line2_name)
+        plt.plot(x, y1, label=line1_name, linewidth=line_width)
+        plt.plot(x, y2, label=line2_name, linewidth=line_width)
         plt.xlabel(xlabel, fontsize=fontsize)
         plt.ylabel(ylabel, fontsize=fontsize)
         plt.legend(loc='center right', fontsize=fontsize)
@@ -32,8 +34,6 @@ def line_plot(data_file):
 
 
 def bar_plot(data_file):
-    fontsize = 18
-    width = 0.35  # the width of the bars: can also be len(x) sequence
 
     with open(data_file) as f:
         xlabel = f.readline().strip()
@@ -43,7 +43,6 @@ def bar_plot(data_file):
         y1 = []
         for line in f:
             line = line.strip().split('\t')
-            print(line)
             name.append(line[0])
             y1.append(float(line[1]))
         x = numpy.arange(len(y1))
@@ -78,7 +77,6 @@ def stack_bar_plot(data_file):
         #y3 = []
         for line in f:
             line = line.strip().split('\t')
-            print(line)
             name.append(line[0])
             y1.append(float(line[1]))
             y2.append(float(line[2]))
@@ -106,9 +104,6 @@ def stack_bar_plot(data_file):
 
 
 def stack_line_plot(data_file):
-    fontsize = 18
-    width = 0.35  # the width of the bars: can also be len(x) sequence
-
     with open(data_file) as f:
         xlabel = f.readline().strip()
         ylabel = f.readline().strip()
@@ -121,7 +116,6 @@ def stack_line_plot(data_file):
         y3 = []
         for line in f:
             line = line.strip().split('\t')
-            print(line)
             name.append(line[0])
             y1.append(float(line[1]))
             y2.append(float(line[2]))
@@ -152,6 +146,9 @@ def stack_line_plot(data_file):
 
 
 if __name__ == '__main__':
+    if sys.version.startswith('2.'):
+        print('为了美观，请使用python3')
+        exit(0)
     if len(sys.argv) == 2:
         print('Please input data file as a parameter')
         print('python plot.py function data_file')
