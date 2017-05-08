@@ -1,7 +1,10 @@
 程序内存监测
 ====
 
+首先安装依赖库：`pip3 install psutil`
+
 使用方法：
+
 
     python3 name cmd
 
