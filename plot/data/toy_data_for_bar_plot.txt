@@ -1,0 +1,9 @@
+X:length of $M$
+Y:number of itemset
+Name1
+data1	87
+data2	87
+data3	257
+data4	307
+data5	557
+data6	857

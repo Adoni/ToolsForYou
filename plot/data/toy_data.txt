@@ -1,0 +1,10 @@
+X:length of $M$
+Y:number of itemset
+Name1
+Name2
+data1	87	49.23
+data2	87	29.43
+data3	857	339.17
+data4	807	288.99
+data5	857	324.16
+data6	857	93.94
