@@ -28,7 +28,7 @@ def line_plot(data_file):
         plt.tick_params(axis='y', labelsize=fontsize)
         plt.tight_layout(pad=0.1)
         plt.savefig('%s.png' % (data_file))
-        # plt.show()
+        plt.show()
 
 
 def bar_plot(data_file):
@@ -97,7 +97,7 @@ def stack_bar_plot(data_file):
         plt.tick_params(axis='x', labelsize=fontsize)
         plt.tick_params(axis='y', labelsize=fontsize)
         #plt.legend((p1[0], p2[0], p3[0]), (line1_name, line2_name, line3_name))
-        plt.legend((p1[0], p2[0]), (line1_name, line2_name), loc='left', fontsize=fontsize)
+        plt.legend((p1[0], p2[0]), (line1_name, line2_name), loc='upper left', fontsize=fontsize)
         #plt.legend(loc='center right', fontsize=fontsize)
         xlabels = plt.xticks(x, name, rotation=30, horizontalalignment='right')
         plt.tight_layout(pad=0.1)
@@ -152,11 +152,17 @@ def stack_line_plot(data_file):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 1:
+    if len(sys.argv) == 2:
         print('Please input data file as a parameter')
+        print('python plot.py function data_file')
         print('Like:')
-        print('python plot.py data/toy_data.txt')
+        print('python plot.py bar_plot data/toy_data_for_bar_plot.txt')
         exit(0)
-    data_file = sys.argv[1]
-    #stack_bar_plot(data_file)
-    bar_plot(data_file)
+    function_name = sys.argv[1]
+    data_file = sys.argv[2]
+    if function_name=='bar_plot':
+        bar_plot(data_file)
+    elif function_name=='stack_bar_plot':
+        stack_bar_plot(data_file)
+    elif function_name=='line_plot':
+        line_plot(data_file)
