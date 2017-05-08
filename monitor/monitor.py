@@ -16,7 +16,6 @@ if __name__=='__main__':
             status=p.status()
             if status=='zombie':
                 break
-            print(status)
             mem=p.memory_info()
             now=datetime.datetime.fromtimestamp(p.create_time()).strftime("%Y-%m-%d %H:%M:%S")
             fout.write('%s %s %d %d\n'%(now, status, mem.rss, mem.vms))
