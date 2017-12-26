@@ -1,3 +1,4 @@
 plot/data/*
 plot/data/*.pdf
 plot/data/*.png
+*.txt
